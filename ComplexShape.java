@@ -53,6 +53,27 @@ public class ComplexShape extends GeometricShape {
 		return shapes;
 	}
 
+/**
+	 * method for adding objects of ComplexShape type to existing array of
+	 * ComplexShape objects with varargs functionality (we can pass any number
+	 * of ComplexShape objects as parameters,even none
+	 * @param complexShapes
+	 */
+	public void addVarShapes(ComplexShape... complexShapes) {
+		for (int i = 0; i < complexShapes.length; i++) {
+			if (numOfShapes == shapes.length) {
+				resizeShapes();
+			}
+			shapes[numOfShapes] = complexShapes[i];
+			numOfShapes++;
+			// if (numOfShapes == shapes.length) {
+			// resizeShapes();
+			// }
+		}
+	}
+
+
+
 	/**
 	 *method for adding  array of objects of GeometricShape type
 	 * @param shapes2
